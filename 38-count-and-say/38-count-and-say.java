@@ -17,8 +17,7 @@ class Solution {
         for(int i = 1; i < n.length(); i++){
             if(n.charAt(i) == c){
                 count++;
-            }
-            else{
+            }else{
                 sb.append(count);
                 sb.append(c);
                 c = n.charAt(i);
