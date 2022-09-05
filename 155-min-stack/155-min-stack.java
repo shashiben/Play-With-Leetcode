@@ -18,6 +18,7 @@ class MinStack {
     }
     
     public int top() {
+        if(head==null)return -1;
         return head.value;
     }
     
