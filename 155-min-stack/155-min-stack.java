@@ -13,6 +13,7 @@ class MinStack {
     }
     
     public void pop() {
+        if(head!=null)
         head=head.next;
     }
     
