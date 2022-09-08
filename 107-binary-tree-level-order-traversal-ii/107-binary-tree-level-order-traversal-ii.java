@@ -19,10 +19,9 @@ class Solution {
         addLevelWise(root,map,0);
         System.out.println(map);
         List<List<Integer>> result=new ArrayList<>();
-        for (List<Integer> list :map.values()){
-            result.add(list);
-        } 
-        Collections.reverse(result);
+        for(int i=map.size()-1;i>=0;i--){
+            result.add(map.get(i)); 
+        }
         return result;
     }
     public void addLevelWise(TreeNode root,Map<Integer,List<Integer>> map,int level){
