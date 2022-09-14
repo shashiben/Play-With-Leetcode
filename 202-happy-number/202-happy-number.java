@@ -18,6 +18,9 @@ class Solution {
     }
     public int doSquare(int n){
         int result=0;
+        if(n<10){
+            return n*n;
+        }
         while(n!=0){
             int trail=n%10;
             result=trail*trail+result;
