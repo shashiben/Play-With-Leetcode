@@ -5,7 +5,7 @@ class Solution {
         }
         int temp=0;
         HashSet<Integer> hashSet=new HashSet<>();
-        while(n>0 && !hashSet.contains(n)){
+        while(!hashSet.contains(n)){
             n=doSquare(n);
             if(n==1){
                 return true;
