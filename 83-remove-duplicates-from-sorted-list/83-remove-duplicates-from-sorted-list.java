@@ -18,8 +18,6 @@ class Solution {
                 result=result.next;
             }      
         }
-        if(result!=null)
-        result.next=null;
         return head;
     }
 }
