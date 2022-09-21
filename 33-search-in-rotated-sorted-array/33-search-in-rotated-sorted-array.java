@@ -4,20 +4,22 @@ class Solution {
         int high=nums.length-1;
         while(low<=high){
             int mid=(low+high)/2;
+            System.out.println(nums[low]+","+nums[mid]+","+nums[high]);
             if(nums[mid]==target){
                 return mid;
             }
             if(nums[low]<=nums[mid]){
-                if(target>=nums[low]  && target<nums[mid]){
+                if(target>=nums[low]  && target<=nums[mid]){
                     high=mid-1;
                 }else{
                     low=mid+1;
                 }
             }else{
-                if(target > nums[mid] && target <= nums[high])
+                if(target >= nums[mid] && target <= nums[high]){
 				    low = mid + 1;
-			    else
+                }else{
 				    high = mid - 1;
+                }
             }
         }
         return -1;
