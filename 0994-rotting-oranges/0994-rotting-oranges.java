@@ -8,14 +8,14 @@ class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1) freshCount++;
-                if (grid[i][j] == 2) q.offer(new int[]{i,j});
+                else if (grid[i][j] == 2) q.offer(new int[]{i,j});
             }
         }
         int minutes = 0;
         while (freshCount > 0 && !q.isEmpty()) {
             minutes++;
             int size = q.size();
-            while (freshCount > 0 && size-- > 0) {
+            while (freshCount > 0 && size > 0) {
                 int[] pair = q.poll();
                 int i = pair[0];
                 int j = pair[1];
@@ -23,6 +23,7 @@ class Solution {
                 if (check(grid, i - 1, j, q)) freshCount--;
                 if (check(grid, i, j + 1, q)) freshCount--;
                 if (check(grid, i, j - 1, q)) freshCount--;
+                size--;
             }
         }
         return freshCount == 0 ? minutes : -1;
